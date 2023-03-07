@@ -1,16 +1,16 @@
-import getCountryName from "../services"
+import getCountryName from '../services'
 
-const app = document.getElementById("app");
-const p = document.createElement("p");
+const app = document.getElementById('app')
+const p = document.createElement('p')
 
 const Countries = () => {
-    getCountryName().then(data => {
-        p.textContent = JSON.stringify(data[0].name.official);
-        app.appendChild(p);
-    })
-    getCountryName()
+  getCountryName().then(data => {
+    p.textContent = JSON.stringify(data[0].name.official)
+    app.appendChild(p)
+  })
+  getCountryName()
 
-    return ``
+  return ''
 }
 
 export default Countries
