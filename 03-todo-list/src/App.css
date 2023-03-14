@@ -8,7 +8,7 @@
   font-weight: 400;
 }
 body {
-  background-color: #1C1C1C;
+  background-color: #091d0f;
   color: #fff;
   margin: 0;
   display: flex;
@@ -27,7 +27,7 @@ a {
   color: #fff;
 }
 button {
-  background-color: #333;
+  background-color: #264d31;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -36,10 +36,10 @@ button {
   transition: background-color 0.2s ease-in-out;
 }
 button:hover {
-  background-color: #444;
+  background-color: #336441;
 }
 input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea {
-  background-color: #333!important;
+  background-color: #264d31!important;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -48,7 +48,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
   box-sizing: border-box;
 }
 input[type="submit"] {
-  background-color: #333!important;
+  background-color: #264d31!important;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -57,7 +57,7 @@ input[type="submit"] {
   transition: background-color 0.2s ease-in-out;
 }
 input[type="submit"]:hover {
-  background-color: #444;
+  background-color: #336441;
 }
 ul {
   text-align: left;

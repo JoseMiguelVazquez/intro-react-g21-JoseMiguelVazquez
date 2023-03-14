@@ -19,13 +19,13 @@ const ToDoList = () => {
 
   return (
     <div>
-      <h1>Lista de Tareas</h1>
+      <h1>To-Do List</h1>
       <input
         type='text'
         value={inputValue}
         onChange={(event) => setinputValue(event.target.value)}
       />
-      <button className='add-button' onClick={handleAdd}>Agregar</button>
+      <button className='add-button' onClick={handleAdd}>Add</button>
       <ul>
         {todos.map((todo, index) => (
           <ToDoItem

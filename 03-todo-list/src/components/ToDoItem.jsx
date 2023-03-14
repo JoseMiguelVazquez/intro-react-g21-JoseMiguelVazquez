@@ -7,7 +7,7 @@ const ToDoItem = ({ todo, handleDelete }) => {
         className='delete-button'
         onClick={handleDelete}
       >
-        Eliminar
+        Remove
       </button>
     </li>
   )
