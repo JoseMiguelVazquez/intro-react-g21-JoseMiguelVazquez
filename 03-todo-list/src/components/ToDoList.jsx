@@ -1,9 +1,20 @@
 import React, { useState } from 'react'
+import ToDoItem from './ToDoItem'
 
 const ToDoList = () => {
   const [inputValue, setinputValue] = useState('')
+
+  const [todos, setTodos] = useState([])
+
   const handleAdd = () => {
-    console.log('Agregué', inputValue)
+    if (inputValue.trim()) { // trim limpia espacios en blanco
+      setTodos([...todos, inputValue]) // spread operator
+      setinputValue('') // Limpiamos el input para volver a escribir
+    }
+  }
+
+  const deleteTodo = (itemIndex) => {
+    setTodos(todos.filter((_, i) => i !== itemIndex))
   }
 
   return (
@@ -16,15 +27,13 @@ const ToDoList = () => {
       />
       <button className='add-button' onClick={handleAdd}>Agregar</button>
       <ul>
-        <li>Item 1
-          <button>Eliminar</button>
-        </li>
-        <li>Item 2
-          <button>Eliminar</button>
-        </li>
-        <li>Item 3
-          <button>Eliminar</button>
-        </li>
+        {todos.map((todo, index) => (
+          <ToDoItem
+            key={index}
+            todo={todo}
+            handleDelete={() => deleteTodo(index)}
+          />
+        ))}
       </ul>
     </div>
   )
