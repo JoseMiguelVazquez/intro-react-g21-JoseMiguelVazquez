@@ -1,63 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #242424;
+  position:absolute;
+}
+
 #root {
-  max-width: 1280px;
+  width: 80%;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
-body {
-  background-color: #242424;
+
+h1 {
+  color: #61dafb;
 }
+
 .grid-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .image-container {
   flex-basis: 19%;
 }
+
 img {
   max-width: 100%;
 }
+
+.search-bar{
+  margin: 40px;
+}
+
+.search-input{
+  font-size: 24px;
+  background-color: transparent;
+  border: 2px solid #61dafb;
+  color: #61dafb;
+  padding:  15px 20px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.search-input:focus{
+  outline: none;
+}
+
+.search-input::placeholder{
+  color: #61dafb;
+}
+
+.search-button{
+  background-color: transparent;
+  border: 2px solid #61dafb;
+  font-size: 24px;
+  padding: 15px 20px;
+  border-radius: 0px 10px 10px 0px;
+  color: #61dafb;
+}
+
+.search-button:hover{
+  background-color: #61dafb;
+  color: #282c34;
+  cursor: pointer;
+}
+
+.search-button:focus{
+  outline: none;
+}
+
 @media screen and (max-width: 992px) {
   .image-container {
     flex-basis: 31%;
   }
 }
+
+@media screen and (max-width: 750px) {
+  .search-bar{
+    margin: 40px 0px;
+    width: 100%;
+  }
+  .search-input{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .search-button{
+    border-radius: 10px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .image-container {
     flex-basis: 48%;
   }
 }
-.search-bar{
-  margin: 40px;
-}
-.search-input{
-  font-size: 24px;
-  background-color: transparent;
-  border: 2px solid #61DAFB;
-  color: #61DAFB;
-  padding:  15px 20px;
-  border-radius: 10px 0px 0px 10px;
-}
-.search-input:focus{
-  outline: none;
-}
-.search-input::placeholder{
-  color: #61DAFB;
-}
-.search-button{
-  background-color: transparent;
-  border: 2px solid #61DAFB;
-  font-size: 24px;
-  padding: 15px 20px;
-  border-radius: 0px 10px 10px 0px;
-  color: #61DAFB;
-}
-.search-button:hover{
-  background-color: #61DAFB;
-  color: #282C34;
-  cursor: pointer;
-}
-.search-button:focus{
-  outline: none;
+
+@media screen and (max-width: 425px) {
+  .image-container {
+    flex-basis: 100%;
+  }
+  .search-input{
+    font-size: 16px;
+    padding: 10px 10px;
+  }
+  .search-button{
+    font-size: 16px;
+    padding: 10px 10px;
+  }
 }

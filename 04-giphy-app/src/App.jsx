@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import ImageCard from './components/ImageCard'
 import './App.css'
+import SearchBar from './components/SearchBar'
 
 function App () {
   const [gifs, setGifs] = useState([])
@@ -14,16 +15,32 @@ function App () {
       .then(response => response.json())
       .then(results => {
         setGifs(results.data)
+      }).catch(error => {
+        console.log(error)
       })
   }, [])
 
   const generateId = () => {
-    Math.random().toString(36).substring(2, 9)
+    return Math.random().toString(36).substring(2, 9)
+  }
+
+  // Función que se le pasa al componente SearchBar para que pueda ejecutarla
+  // y realizar la búsqueda en la API
+
+  const sendSearch = (search) => {
+    fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${search}&limit=30&offset=0&rating=g&lang=en`)
+      .then(response => response.json())
+      .then(results => {
+        setGifs(results.data)
+      }).catch(error => {
+        console.log(error)
+      })
   }
 
   return (
     <div className='App'>
       <h1>Giphy App</h1>
+      <SearchBar handleSearch={sendSearch} />
       <div className='grid-cards'>
         {
           gifs.map(gif => (
