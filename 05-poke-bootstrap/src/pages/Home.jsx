@@ -8,7 +8,7 @@ const Home = () => {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
       .then(response => response.json())
       .then(data => {
-        console.log(data.results)
+        // console.log(data.results)
         setPokemons(data.results)
       }).catch(error => {
         console.log(error)
